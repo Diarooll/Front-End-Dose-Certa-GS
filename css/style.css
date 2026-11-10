@@ -1,0 +1,576 @@
+/* Cores do projeto e cores que mudam com o tema */
+:root {
+    --verde: #1F4D3F;
+    --ambar: #E8A33D;
+    --ambar-escuro: #8A5A12;
+    --creme: #F6F2EA;
+    --areia: #EAE3D4;
+    --tinta: #1C1F1D;
+    --tomada: #276B4D;
+    --atrasada: #E8A33D;
+    --perdida: #B3412E;
+
+    --fundo: var(--creme);
+    --fundo-alt: var(--areia);
+    --fundo-verde: var(--verde);
+    --texto: var(--tinta);
+    --titulo: var(--verde);
+    --destaque: var(--ambar-escuro);
+    --linha: #BDB5A3;
+    --botao-fundo: var(--verde);
+    --botao-texto: var(--creme);
+    --erro: var(--perdida);
+    --foco: var(--tinta);
+
+    --margem: max(20px, calc((100% - 1120px) / 2));
+}
+
+/* Modo escuro: só troca o valor das variáveis */
+body.escuro {
+    --fundo: #14332A;
+    --fundo-alt: #1B4236;
+    --fundo-verde: #0F2A22;
+    --texto: var(--creme);
+    --titulo: var(--creme);
+    --destaque: var(--ambar);
+    --linha: #4F8271;
+    --botao-fundo: var(--creme);
+    --botao-texto: #14332A;
+    --erro: #F5B3A3;
+    --foco: var(--ambar);
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Atkinson Hyperlegible", Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2 {
+    margin: 0 0 24px;
+    font-family: "Fraunces", Georgia, serif;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+h2 {
+    color: var(--titulo);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 0 0 8px;
+    color: var(--titulo);
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+section {
+    padding: 88px var(--margem);
+}
+
+:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 3px;
+}
+
+/* Foco em âmbar nas áreas de fundo verde */
+.topo :focus-visible,
+.hero :focus-visible,
+.metade-cuidador :focus-visible {
+    outline-color: var(--ambar);
+}
+
+/* Link para quem navega pelo teclado */
+.pular {
+    position: absolute;
+    top: -80px;
+    left: 16px;
+    z-index: 20;
+    padding: 12px 20px;
+    background: var(--creme);
+    color: var(--tinta);
+}
+
+.pular:focus {
+    top: 12px;
+}
+
+/* Botões */
+.botao {
+    display: inline-block;
+    min-height: 56px;
+    padding: 12px 32px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--botao-fundo);
+    color: var(--botao-texto);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.botao:hover {
+    opacity: 0.85;
+}
+
+.botao-dose {
+    background: var(--ambar);
+    color: var(--tinta);
+}
+
+.botao-icone {
+    width: 56px;
+    height: 56px;
+    padding: 12px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.botao-icone:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Menu */
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px var(--margem);
+    background: var(--fundo-verde);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: auto;
+    color: var(--creme);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.topo nav ul {
+    display: flex;
+    gap: 8px;
+}
+
+.topo nav a {
+    display: block;
+    padding: 10px 12px;
+    color: var(--creme);
+    text-decoration: none;
+}
+
+.topo nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+/* 1. Primeira tela */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 64px;
+    background: var(--fundo-verde);
+    color: var(--creme);
+}
+
+.hero .botao {
+    margin-top: 8px;
+    background: var(--creme);
+    color: var(--verde);
+}
+
+.hero-imagem {
+    width: 100%;
+}
+
+/* 2. O problema */
+.problema {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: start;
+    gap: 72px;
+}
+
+.cena {
+    margin-bottom: 32px;
+}
+
+.cena li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 1px solid var(--linha);
+}
+
+.cena li:last-child {
+    border-bottom: 1px solid var(--linha);
+    font-weight: 700;
+}
+
+.cena time {
+    color: var(--destaque);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.problema-foto {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: 20% 50%;
+}
+
+/* 3. Como funciona */
+.como-funciona {
+    background: var(--fundo-alt);
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+    margin-top: 40px;
+}
+
+.passos li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.passos h3,
+.passos p {
+    grid-column: 1 / -1;
+}
+
+.passos h3 {
+    margin-top: 20px;
+}
+
+.passo-numero,
+.ods-numero {
+    color: var(--destaque);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.passo-icone {
+    width: 64px;
+    padding: 8px;
+    border-radius: 6px;
+    background: var(--creme);
+}
+
+/* A demonstração fica sempre clara para os desenhos aparecerem */
+.demo {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+    gap: 48px;
+    margin-top: 72px;
+    padding: 32px 48px;
+    border-radius: 6px;
+    background: var(--creme);
+    color: var(--tinta);
+}
+
+.demo h3 {
+    color: var(--verde);
+}
+
+/* 4. Para quem é */
+.para-quem {
+    padding: 88px 0 0;
+}
+
+.para-quem h2 {
+    padding: 0 var(--margem);
+}
+
+.metades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.metade {
+    padding: 64px max(20px, calc((100vw - 1120px) / 2));
+}
+
+/* O texto fica no meio porque o outro lado é mais alto por causa da foto */
+.metade-idoso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 56px;
+    background: var(--fundo-alt);
+}
+
+.metade-cuidador {
+    padding-left: 56px;
+    background: var(--fundo-verde);
+    color: var(--creme);
+}
+
+.metade-cuidador h3 {
+    color: var(--creme);
+}
+
+.metade ul {
+    margin-top: 24px;
+}
+
+.metade li {
+    padding: 12px 0;
+    border-top: 1px solid var(--linha);
+}
+
+.metade-foto {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    margin-top: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: 50% 54%;
+}
+
+/* 5. Simulador */
+#form-simulador {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+#form-simulador label {
+    width: 100%;
+    font-weight: 700;
+}
+
+#minutos {
+    width: 160px;
+    min-height: 56px;
+    padding: 8px 16px;
+    border: 2px solid var(--texto);
+    border-radius: 6px;
+    background: var(--creme);
+    color: var(--tinta);
+    font-family: inherit;
+    font-size: 24px;
+}
+
+.resultado {
+    min-height: 44px;
+    margin: 24px 0;
+    font-size: 24px;
+}
+
+.resultado.erro {
+    color: var(--erro);
+    font-size: 18px;
+}
+
+/* A cor do status sempre aparece junto da palavra */
+.status {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tomada {
+    background: var(--tomada);
+    color: #FFFFFF;
+}
+
+.atrasada {
+    background: var(--atrasada);
+    color: var(--tinta);
+}
+
+.perdida {
+    background: var(--perdida);
+    color: #FFFFFF;
+}
+
+.regua {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--linha);
+}
+
+.simulador h3 {
+    margin-top: 72px;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.contador p {
+    margin: 0;
+}
+
+.contador strong {
+    color: var(--destaque);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.contador .botao {
+    width: 64px;
+    padding: 12px 0;
+    font-size: 24px;
+}
+
+/* Tabela fixa com a semana de exemplo */
+.grade {
+    width: 100%;
+    margin-top: 24px;
+    border-spacing: 6px;
+}
+
+.grade caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.grade td {
+    height: 68px;
+    border: 2px solid var(--linha);
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* 6. Impacto e equipe */
+.impacto {
+    background: var(--fundo-alt);
+}
+
+.impacto > p {
+    max-width: 720px;
+}
+
+.ods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 48px;
+}
+
+.ods h3 {
+    margin-top: 12px;
+}
+
+#equipe {
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid var(--linha);
+}
+
+.equipe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 64px;
+    font-weight: 700;
+}
+
+.equipe span {
+    display: block;
+    font-weight: 400;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 48px var(--margem);
+    background: var(--fundo-verde);
+    color: var(--creme);
+    font-size: 16px;
+}
+
+.rodape p {
+    margin-bottom: 4px;
+}
+
+.rodape .rodape-nome {
+    margin-bottom: 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Respeita quem pediu menos animação no sistema */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

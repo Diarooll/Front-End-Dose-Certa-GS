@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+    <!-- corpo da caixa -->
+    <rect x="90" y="60" width="140" height="140" rx="10" fill="#1F4D3F"/>
+    <!-- compartimento aberto com os comprimidos -->
+    <rect x="106" y="76" width="108" height="108" rx="6" fill="#F6F2EA" stroke="#1C1F1D" stroke-width="3"/>
+    <circle cx="138" cy="122" r="13" fill="#1F4D3F"/>
+    <rect x="158" y="132" width="44" height="20" rx="10" fill="#8A5A12"/>
+    <!-- tampa levantada -->
+    <polygon points="106,76 214,76 194,20 126,20" fill="#C9B98F" stroke="#1C1F1D" stroke-width="3" stroke-linejoin="round"/>
+    <!-- sinal de dose tomada -->
+    <circle cx="272" cy="124" r="26" fill="#276B4D"/>
+    <path d="M260 124l9 9 16-18" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

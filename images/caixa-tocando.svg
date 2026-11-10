@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240">
+    <!-- ondas do alarme -->
+    <g fill="none" stroke="#8A5A12" stroke-width="6" stroke-linecap="round">
+        <path d="M70 92Q50 128 70 164"/>
+        <path d="M46 76Q16 128 46 180"/>
+        <path d="M250 92Q270 128 250 164"/>
+        <path d="M274 76Q304 128 274 180"/>
+    </g>
+    <!-- corpo da caixa -->
+    <rect x="90" y="60" width="140" height="140" rx="10" fill="#1F4D3F"/>
+    <!-- tampa fechada com o LED aceso -->
+    <rect x="106" y="76" width="108" height="108" rx="6" fill="#E8A33D" stroke="#1C1F1D" stroke-width="3"/>
+    <circle cx="160" cy="124" r="16" fill="#FFF6DF" stroke="#8A5A12" stroke-width="4"/>
+    <rect x="144" y="166" width="32" height="6" rx="3" fill="#1C1F1D"/>
+</svg>

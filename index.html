@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dose Certa | Porta-comprimidos que insiste até a dose ser tomada</title>
+    <meta name="description" content="Porta-comprimidos semanal que só para de tocar quando o idoso abre o compartimento certo. Projeto da Global Solution FIAP.">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+    <!-- fontes do projeto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@500;600&display=swap">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- menu fixo -->
+    <header class="topo">
+        <a class="marca" href="#inicio">
+            <img src="images/logo.svg" alt="" width="40" height="40">
+            Dose Certa
+        </a>
+
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#problema">O problema</a></li>
+                <li><a href="#como-funciona">Como funciona</a></li>
+                <li><a href="#para-quem">Para quem é</a></li>
+                <li><a href="#simulador">Simulador</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+            </ul>
+        </nav>
+
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Ativar modo escuro" onclick="trocarTema()">
+            <img id="icone-tema" src="images/lua.svg" alt="" width="32" height="32">
+        </button>
+    </header>
+
+    <main id="conteudo">
+        <!-- 1. primeira tela -->
+        <section class="hero" id="inicio">
+            <div class="hero-texto">
+                <h1>A caixa que só para de tocar quando a dose é tomada</h1>
+                <p>Um porta-comprimidos de 28 compartimentos para quem toma remédio todo dia. O alarme continua até o idoso abrir a tampa certa.</p>
+                <a class="botao" href="#como-funciona">Como funciona</a>
+            </div>
+            <img class="hero-imagem" src="images/grade-semana.svg" width="480" height="340" alt="Grade da caixa com 7 dias e 4 horários. A tampa de quarta-feira às 12h está acesa.">
+        </section>
+
+        <!-- 2. o problema -->
+        <section class="problema" id="problema">
+            <div class="problema-texto">
+                <h2>O alarme do celular é fácil de calar</h2>
+                <ol class="cena">
+                    <li><time datetime="14:00">14:00</time> O celular toca na hora do remédio.</li>
+                    <li><time datetime="14:01">14:01</time> “Já vou tomar.”</li>
+                    <li><time datetime="14:02">14:02</time> O alarme é desligado.</li>
+                    <li><time datetime="21:00">21:00</time> A dose da tarde ainda está no compartimento.</li>
+                </ol>
+                <p>E quem cuida está no trabalho, em outra casa ou em outra cidade. Só descobre o que aconteceu quando pergunta, e às vezes nem assim.</p>
+            </div>
+            <img class="problema-foto" src="images/caixa-comprimidos.jpg" width="1200" height="800" alt="Mãos abrindo uma caixinha de comprimidos sobre a mesa, ao lado de um copo de água.">
+        </section>
+
+        <!-- 3. como funciona -->
+        <section class="como-funciona" id="como-funciona">
+            <h2>Como funciona</h2>
+            <ol class="passos">
+                <li>
+                    <span class="passo-numero">1</span>
+                    <img class="passo-icone" src="images/alarme.svg" alt="" width="48" height="48">
+                    <h3>A caixa toca</h3>
+                    <p>O alarme dispara no horário, mesmo sem internet. A soneca adia 5 minutos, no máximo 2 vezes.</p>
+                </li>
+                <li>
+                    <span class="passo-numero">2</span>
+                    <img class="passo-icone" src="images/led.svg" alt="" width="48" height="48">
+                    <h3>O LED mostra a tampa certa</h3>
+                    <p>Só o compartimento daquela dose acende. Abriu outra tampa? A caixa dá um bipe de erro e continua tocando.</p>
+                </li>
+                <li>
+                    <span class="passo-numero">3</span>
+                    <img class="passo-icone" src="images/celular.svg" alt="" width="48" height="48">
+                    <h3>O cuidador é avisado</h3>
+                    <p>Se a tampa seguir fechada 30 minutos depois do horário, o aviso chega no celular de quem cuida.</p>
+                </li>
+            </ol>
+
+            <!-- demonstração: o botão troca a imagem -->
+            <div class="demo">
+                <img id="imagem-caixa" src="images/caixa-tocando.svg" width="320" height="240" alt="Compartimento da dose fechado, com o LED aceso e o alarme tocando.">
+                <div class="demo-texto">
+                    <h3>Faça o alarme parar</h3>
+                    <p id="texto-caixa" aria-live="polite">São 12h e a caixa está tocando. Só abrir a tampa resolve.</p>
+                    <button class="botao botao-dose" id="botao-tampa" type="button" onclick="mexerNaTampa()">Abrir a tampa</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. para quem é -->
+        <section class="para-quem" id="para-quem">
+            <h2>Para quem é</h2>
+            <div class="metades">
+                <div class="metade metade-idoso">
+                    <h3>Para quem toma o remédio</h3>
+                    <p>Pessoas a partir de 60 anos que moram sozinhas ou passam parte do dia sós e usam mais de um remédio contínuo, como os de pressão e diabetes.</p>
+                    <ul>
+                        <li>Alarme forte, de 70 dB ou mais</li>
+                        <li>LED que dá para ver a 3 metros</li>
+                        <li>Não precisa mexer em celular</li>
+                    </ul>
+                </div>
+                <div class="metade metade-cuidador">
+                    <h3>Para quem cuida de longe</h3>
+                    <p>Filho, filha ou cuidador que quer saber se a dose foi tomada sem precisar ligar a toda hora.</p>
+                    <ul>
+                        <li>Cadastra os horários pelo celular</li>
+                        <li>Recebe aviso se a dose atrasar</li>
+                        <li>Leva o histórico para a consulta</li>
+                    </ul>
+                    <img class="metade-foto" src="images/maos-dadas.jpg" width="800" height="1200" alt="Uma mulher idosa e uma mulher mais jovem sentadas frente a frente, de mãos dadas.">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. simulador, contador e semana de exemplo -->
+        <section class="simulador" id="simulador">
+            <h2>Simulador de dose</h2>
+            <p>Quanto tempo depois do horário a tampa certa foi aberta? Digite os minutos e veja como a dose fica registrada.</p>
+
+            <form id="form-simulador" novalidate onsubmit="simularDose(event)">
+                <label for="minutos">Minutos depois do horário</label>
+                <input id="minutos" type="text" inputmode="numeric" autocomplete="off">
+                <button class="botao" type="submit">Ver status</button>
+            </form>
+            <p class="resultado" id="resultado" role="status"></p>
+
+            <ul class="regua">
+                <li><span class="status tomada">Tomada</span> até 30 minutos</li>
+                <li><span class="status atrasada">Atrasada</span> de 30 a 60 minutos</li>
+                <li><span class="status perdida">Perdida</span> depois de 60 minutos</li>
+            </ul>
+
+            <h3>Contador de doses da semana</h3>
+            <p>A caixa tem 28 compartimentos. Marque aqui cada dose tomada.</p>
+            <div class="contador">
+                <button class="botao" type="button" aria-label="Tirar uma dose" onclick="tirarDose()">−</button>
+                <p aria-live="polite"><strong id="contador-doses">0</strong> de 28 doses tomadas</p>
+                <button class="botao" type="button" aria-label="Somar uma dose" onclick="somarDose()">+</button>
+            </div>
+
+            <h3>A semana no painel do cuidador</h3>
+            <p>É assim que quem cuida acompanha as doses. Os dados abaixo são só um exemplo.</p>
+            <table class="grade">
+                <caption>Exemplo de status das doses da semana, por dia e horário</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Horário</th>
+                        <th scope="col">Seg</th>
+                        <th scope="col">Ter</th>
+                        <th scope="col">Qua</th>
+                        <th scope="col">Qui</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">Sáb</th>
+                        <th scope="col">Dom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">06h</th>
+                        <td class="tomada">Tomada</td>
+                        <td class="tomada">Tomada</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12h</th>
+                        <td class="tomada">Tomada</td>
+                        <td class="atrasada">Atrasada</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">18h</th>
+                        <td class="tomada">Tomada</td>
+                        <td class="tomada">Tomada</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">22h</th>
+                        <td class="perdida">Perdida</td>
+                        <td class="tomada">Tomada</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                        <td>Pendente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. impacto e equipe -->
+        <section class="impacto" id="impacto">
+            <h2>Impacto</h2>
+            <p>A Dose Certa ainda é um protótipo, então não temos números de uso. O que vamos medir é a porcentagem de doses tomadas em até 30 minutos do horário.</p>
+            <p>Um limite que assumimos: abrir a tampa não prova que o remédio foi engolido.</p>
+
+            <ul class="ods">
+                <li>
+                    <span class="ods-numero">3</span>
+                    <h3>Saúde e bem-estar</h3>
+                    <p>Ajuda a manter em dia o tratamento de doenças como pressão alta e diabetes.</p>
+                </li>
+                <li>
+                    <span class="ods-numero">10</span>
+                    <h3>Redução das desigualdades</h3>
+                    <p>O idoso não precisa saber usar aplicativo. Basta abrir a tampa que acendeu.</p>
+                </li>
+                <li>
+                    <span class="ods-numero">11</span>
+                    <h3>Cidades e comunidades sustentáveis</h3>
+                    <p>Apoia quem envelhece na própria casa, perto da família e do bairro.</p>
+                </li>
+            </ul>
+
+            <h2 id="equipe">Equipe</h2>
+            <ul class="equipe">
+                <li>Arthur Deocleciano <span>RM574299</span></li>
+                <li>Diego Alejandro <span>RM575447</span></li>
+                <li>Victor Santos <span>RM575508</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-nome">Dose Certa</p>
+        <p>FIAP · Engenharia de Software · Global Solution 2026.2 · CitizenTech</p>
+        <p>Arthur Deocleciano, Diego Alejandro e Victor Santos</p>
+        <p>Projeto acadêmico, sem certificação da ANVISA. Não substitui a orientação do médico.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
