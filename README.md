@@ -13,7 +13,7 @@ Projeto da Global Solution 2026.2 (CitizenTech), FIAP, Engenharia de Software, 1
 | **Cidadão** | Idoso a partir de 60 anos que mora sozinho ou passa parte do dia só e usa mais de um remédio contínuo. Do outro lado, o filho, a filha ou o cuidador que acompanha de longe. |
 | **Problema em uma frase** | O alarme do celular é fácil de calar: o idoso desliga, diz "já vou tomar" e esquece a dose. |
 | **Como funciona** | No horário da dose, a caixa toca e acende o LED do compartimento certo. O alarme só para quando aquela tampa é aberta. Se ela seguir fechada 30 minutos depois do horário, o cuidador é avisado. |
-| **Repositório** | https://github.com/Diarooll/Global-Solution---Dose-Certa |
+| **Repositório** | https://github.com/Diarooll/Front-End-Dose-Certa-GS |
 | **Indicador de impacto** | Porcentagem de doses tomadas em até 30 minutos do horário. |
 | **ODS** | 3 (Saúde e bem-estar), 10 (Redução das desigualdades) e 11 (Cidades e comunidades sustentáveis). |
 
