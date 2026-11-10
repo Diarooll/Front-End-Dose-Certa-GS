@@ -56,23 +56,6 @@ Esta é a arquitetura definida no System Design do projeto.
 - Abrir a tampa errada mantém o alarme e gera um bipe de erro.
 - Dose perdida não é reprogramada nem somada à próxima, porque dobrar a dose é decisão médica. O sistema só avisa o cuidador.
 
-### Limitações
-
-- Abrir a tampa não prova que o remédio foi tomado.
-- Sem Wi-Fi o alarme funciona, mas o cuidador só é avisado quando a conexão volta.
-- A caixa aceita no máximo 4 horários por dia.
-- É um projeto acadêmico, sem certificação da ANVISA, e não substitui a orientação do médico.
-
-## A landing page
-
-Este repositório contém o site de apresentação do projeto, feito em HTML, CSS e JavaScript puros, sem frameworks nem bibliotecas. As fontes Fraunces e Atkinson Hyperlegible vêm do Google Fonts.
-
-Para ver o site, abra o arquivo `index.html` no navegador. O layout foi feito para telas de computador.
-
-### Seções
-
-Início, O problema, Como funciona, Para quem é, Simulador de dose, Impacto e Equipe.
-
 ### Interações em JavaScript
 
 | Interação | O que faz | Funções |
@@ -82,21 +65,3 @@ Início, O problema, Como funciona, Para quem é, Simulador de dose, Impacto e E
 | Simulador de dose | Recebe os minutos de atraso, trata entrada inválida e mostra Tomada, Atrasada ou Perdida. | `simularDose`, `calcularStatus`, `mostrarStatus`, `mostrarErro` |
 | Contador de doses | Soma ou tira doses, sempre entre 0 e 28. | `somarDose`, `tirarDose` |
 
-### Estrutura de pastas
-
-```
-├── index.html
-├── css/style.css
-├── js/script.js
-├── images/
-└── README.md
-```
-
-## Créditos das imagens
-
-Fotos com licença gratuita do Pexels:
-
-- [Caixa de comprimidos](https://www.pexels.com/photo/person-holding-pill-box-5712676/), por cottonbro studio
-- [Mãe e filha de mãos dadas](https://www.pexels.com/photo/mother-and-daughter-sitting-at-the-table-and-holding-hands-17066496/), por Danik Prihodko
-
-Os ícones e os desenhos da caixa foram criados para este projeto.
